@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+html, body {
+    height: 95%;
+}
+
+.container {
+    min-height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container main {
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    footer .map,
+    footer .list {
+        flex-basis: 50%;
+        text-align: center;
+    }
