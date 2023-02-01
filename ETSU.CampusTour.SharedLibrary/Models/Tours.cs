@@ -11,9 +11,9 @@ namespace ETSU.CampusTour.SharedLibrary.Models
     {
         [Key]
         public int Tour_Id { get; set; }
-        public string Tour_Name { get; set; }
-        public string Tour_Description { get; set; }
-        public string Tour_Type { get; set; }
-        public string Tour_Route { get; set; }
+        public string Tour_Name { get; set; } = string.Empty;   
+        public string Tour_Description { get; set; } = string.Empty;
+        public string Tour_Type { get; set; } = string.Empty;
+        public string Tour_Route { get; set; } = string.Empty;
     }
 }

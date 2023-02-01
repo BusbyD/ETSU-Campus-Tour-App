@@ -1,34 +1,50 @@
+html {
+    font-size: 14px;
+}
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-html, body {
-    height: 95%;
-}
-
-.container {
-    min-height: 95%;
-    display: flex;
-    flex-direction: column;
-}
-
-.container main {
-    flex: 1;
-}
-
-footer {
-    flex-shrink: 0;
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-    footer .map,
-    footer .list {
-        flex-basis: 50%;
-        text-align: center;
+    html {
+        font-size: 16px;
     }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/*body {
+    background-color: #041E42;
+}
+*/
+footer {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+
+/*<!--#FFC425 off #083470 etsublue #041E42-->*/
+div.card-header {
+    background-color: #083470;
+}
+
+
+div.card-body {
+    background-color: #041E42;
+}
+
+div.card.text-center {
+    background-color: white;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #041E42;
+    border-color: white;
+    font-weight: bold;
+}
+/*BELOW IMAGE PATH NEEDS TO BE CHANGED TO SOMETHING MORE MODERN INSTEAD OF HARDCODING AN IMAGE PATH*/
