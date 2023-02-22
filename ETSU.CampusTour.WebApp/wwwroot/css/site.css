@@ -49,19 +49,26 @@ div.card.text-center {
 }
 /*BELOW IMAGE PATH NEEDS TO BE CHANGED TO SOMETHING MORE MODERN INSTEAD OF HARDCODING AN IMAGE PATH*/
 
+img {
+    height: 400px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .select-menu {
     max-width: 330px;
     margin: 50px auto;
-    border:3.5px solid gold;
-    border-radius:11px;
+    border: 3.5px solid gold;
+    border-radius: 11px;
 }
 
     .select-menu .select-btn {
         display: flex;
         height: 55px;
         background: #041E42;
-        color:white;
+        color: white;
         padding: 20px;
         font-size: 18px;
         font-weight: 400;
@@ -80,7 +87,7 @@ div.card.text-center {
         padding: 10px;
         margin-top: 10px;
         border-radius: 8px;
-        background: #fff;
+        background: #ffffffc9;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         animation-name: fadeInDown;
         -webkit-animation-name: fadeInDown;
@@ -96,7 +103,6 @@ div.card.text-center {
             padding: 0 16px;
             border-radius: 8px;
             align-items: center;
-            background: #fff;
         }
 
             .select-menu .options .option i {
@@ -116,6 +122,7 @@ div.card.text-center {
 
 .select-menu.active .select-btn i {
     transform: rotate(-90deg);
+    color: gold;
 }
 
 .select-menu.active .options {
@@ -154,8 +161,13 @@ div.card.text-center {
 }
 
 .dropdown-title {
-    font-weight:700;
-    margin-left:auto;
-    margin-right:auto;
-    user-select:none;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+}
+
+.image-holder {
+    width: 100%;
+    text-align: center;
 }
