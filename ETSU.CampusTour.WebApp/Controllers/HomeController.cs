@@ -5,6 +5,7 @@ using System.Diagnostics;
 namespace ETSU.CampusTour.WebApp.Controllers
 {
     public class HomeController : Controller
+        
     {
         private readonly ILogger<HomeController> _logger;
 
