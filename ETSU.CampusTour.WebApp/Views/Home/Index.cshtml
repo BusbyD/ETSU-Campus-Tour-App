@@ -1,84 +1,59 @@
-﻿@{
+﻿@model IEnumerable<ETSU.CampusTour.SharedLibrary.Models.Tour>
+
+@{
     ViewData["Title"] = "Home Page";
 }
-<style>
-    body {
-        color: white;
-        background-color: darkgrey;
-        background-position: center;
-        background-image: url("/css/Images/ETSUStudentsWalking.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-</style>
-@*
-<div style="height:100%;">
-<div class="text-center p-3">
-    <img src="/css/Images/Elogo.png" class="img-fluid rounded-3" />
-    <br />
-    <br />
-    <br />
-    <h1 class="display-1" style="color:white">Tour the Campus!</h1>
-    <br />
-    <div class="rounded-3 img-fluid">
-        <img src="/css/Images/CampusTour.jpg" class="rounded-3"/>
-    </div>
-    </div>
-<br/>
-<br />
-<!--Below has code used to present buttons on landing page and the icons shown on each button. ICONS provided from bootstrap.-->
-    <div class="row">
-        <div class="column"></div>
-        <div class="column d-grid col mx-auto gap-1">
-            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Index">
-                Main Tour
-            </a>
-            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Task">
-                Department Tour
-            </a>
-            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="User">
-                Other
-            </a>
-        </div>
-        <div class="column"></div>
-    </div>
-<div class="d-grid col mx-auto gap-1">
-    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Index">
-    Main Tour
-    </a>
-    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Task">
-    Department Tour
-    </a>
-    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="User">
-    Other
-    </a>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-</div>*@
-    <div class="container-fluid text-center">
-    <br />
-    <br />
-    <img src="/css/Images/Elogo.png" class="img-fluid rounded-3" />
-        <div class="row content">
-            <div class="col-sm-2 sidenav">
-            </div>
-            <div class="col-sm-8 text-left">
-            <p id="example5">Tour the Campus!</p>
-                <hr>
-                <div class="d-grid col mx-auto gap-1">
-                    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Index">
-                        Main Tour
-                    </a>
-                    <a class="btn btn-primary rounded-0 p-1 disabled" asp-area="" asp-controller="Home" asp-action="Task">
-                        Department Tour
-                    </a>
-                    <a class="btn btn-primary rounded-0 p-1 disabled disabled" asp-area="" asp-controller="Home" asp-action="User">
-                        Other
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-2 sidenav">
-                <div class="well">
-            </div>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+<div class="dropdown-example">
+    <div class="select-menu" id="dropdown1">
+        <div class="select-btn">
+            <span class="dropdown-title">Roy S. Nicks Hall</span><i class="fas fa-caret-down"></i>
+            <i class="bx bx-chevron-down"></i>
         </div>
+
+        <ul class="options">
+            <li class="option">
+                <span class="option-text">Primarily houses the College of Nursing at ETSU. The building is named after Roy S. Nicks who is an alumni of ETSU and a former Tennessee state senator.</span>
+            </li>
+        </ul>
     </div>
+</div>
+<div class="image-holder">
+    <img src="roysnicks.jpg" />
+</div>
+<div class="dropdown-example">
+    <div class="select-menu" id="dropdown2">
+        <div class="select-btn">
+            <span class="dropdown-title">DP Culp Center</span><i class="fas fa-caret-down"></i>
+            <i class="bx bx-chevron-down"></i>
+        </div>
+
+        <ul class="options" id="options2">
+            <li class="option">
+                <span class="option-text">The Culp center is a great place to relax on campus. It houses a food court , dining hall, post office, and the Bookstore</span>
+            </li>
+        </ul>
     </div>
+</div>
+<div class="image-holder">
+    <img src="cpa.jpg" />
+</div>
+<script>initDropdowns();
+
+    function initDropdowns() {
+        const optionMenu = document.querySelectorAll(".select-menu");
+        optionMenu.forEach(dropdown => {
+            const selectBtn = dropdown.children[0],
+                options = dropdown.children[1].children,
+                dropdownTitleText = dropdown.children[2];
+            selectBtn.addEventListener("click", () =>
+                dropdown.classList.toggle("active")
+            );
+        });
+
+    }</script>
