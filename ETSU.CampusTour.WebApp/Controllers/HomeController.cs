@@ -18,6 +18,11 @@ namespace ETSU.CampusTour.WebApp.Controllers
             return View();
         }
 
+        public IActionResult Landing()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

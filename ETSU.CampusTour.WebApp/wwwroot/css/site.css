@@ -44,8 +44,34 @@ div.card.text-center {
 .btn-primary {
     color: white;
     background-color: #041E42;
-    border-color: white;
-    font-weight: bold;
+    border-color: #07326e;
+}
+
+
+h1 {
+    color: #FFC425;
+}
+
+p {
+    color: #041E42;
+}
+#example5{
+	color: white;
+	font-size: 40px;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: #FFC425;
+    background-color: #041E42;
+    border-color: #285e8e; /*set the color you want here*/
+}
+a.disabled {
+    pointer-events: none;
+    color: #041E42;
 }
 /*BELOW IMAGE PATH NEEDS TO BE CHANGED TO SOMETHING MORE MODERN INSTEAD OF HARDCODING AN IMAGE PATH*/
 
