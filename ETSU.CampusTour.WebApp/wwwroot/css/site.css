@@ -44,8 +44,34 @@ div.card.text-center {
 .btn-primary {
     color: white;
     background-color: #041E42;
-    border-color: white;
-    font-weight: bold;
+    border-color: #07326e;
+}
+
+
+h1 {
+    color: #FFC425;
+}
+
+p {
+    color: #041E42;
+}
+#example5{
+	color: white;
+	font-size: 40px;
+	text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: #FFC425;
+    background-color: #041E42;
+    border-color: #285e8e; /*set the color you want here*/
+}
+a.disabled {
+    pointer-events: none;
+    color: #041E42;
 }
 /*BELOW IMAGE PATH NEEDS TO BE CHANGED TO SOMETHING MORE MODERN INSTEAD OF HARDCODING AN IMAGE PATH*/
 
@@ -57,14 +83,14 @@ img {
 }
 
 
-.select-menu {
+.dropdown {
     max-width: 330px;
     margin: 50px auto;
     border: 3.5px solid gold;
     border-radius: 11px;
 }
 
-    .select-menu .select-btn {
+    .dropdown .dropdownSelect {
         display: flex;
         height: 55px;
         background: #041E42;
@@ -79,7 +105,7 @@ img {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    .select-menu .options {
+    .dropdown .options {
         position: absolute;
         width: 330px;
         overflow-y: auto;
@@ -97,7 +123,7 @@ img {
         -webkit-animation-fill-mode: both;
     }
 
-        .select-menu .options .option {
+        .dropdown .options .option {
             display: flex;
             cursor: pointer;
             padding: 0 16px;
@@ -105,27 +131,27 @@ img {
             align-items: center;
         }
 
-            .select-menu .options .option i {
+            .dropdown .options .option i {
                 font-size: 25px;
                 margin-right: 12px;
             }
 
-            .select-menu .options .option .option-text {
+            .dropdown .options .option .option-text {
                 font-size: 15px;
                 color: #333;
             }
 
-.select-btn i {
+.dropdownSelect i {
     font-size: 25px;
     transition: 0.3s;
 }
 
-.select-menu.active .select-btn i {
+.dropdown.active .dropdownSelect i {
     transform: rotate(-90deg);
     color: gold;
 }
 
-.select-menu.active .options {
+.dropdown.active .options {
     display: block;
     opacity: 0;
     z-index: 10;
