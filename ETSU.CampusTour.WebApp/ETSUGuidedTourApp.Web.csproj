@@ -16,4 +16,8 @@
     <ProjectReference Include="..\ETSU.CampusTour.SharedLibrary\ETSUGuidedTourApp.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\Images\" />
+  </ItemGroup>
+
 </Project>
