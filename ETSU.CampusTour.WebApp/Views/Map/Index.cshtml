@@ -6,124 +6,84 @@
 <html>  
     <!--Created By: Isaiah Jayne-->
     <!--Creation Date: 2/22/2023 12:24 AM-->
-    <!--Last Modified: 2/22/2023 12:24 AM-->
-<!-- This is the webpage for the map view of our webapp. I've styled it so that there are two tabs within the page; A 'Map view' and a 'List View'-->
-    <body>
+    <!--Last Modified: 2/27/2023 10:12 PM-->
 
-        <div class="center">    <!--These are the buttons responsible for switching you between the two tabs-->
-            <button class="tablink" onclick="openPage('Map', this, '#041E42')" id="defaultOpen">Map</button>
-            <button class="tablink" onclick="openPage('List', this, '#041E42')">Location List</button>
-        </div>    
+    <body>    
 
-        <!--The next two divs are for the content within each of the two respective tabs the first for the map tab and the second for the list tab-->
+        <!--This is the Map view page for the webapp. This page contains an interactive map that shows the user the route and buildings along a tour
+            There is also a list of the locations visited along the tour below the map. The list items can be clicked to view them on the map. 
+        -->
+
+        <div id="Header" class="TopBanner"> <!--This is the header for the page-->
+            <h1>ETSU Map</h1>
+        </div>
+
         <div id="Map" class="tabcontent"> <!--This is where the google maps api thing is embedded into the page-->
             <div class="text-center">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m64!1m8!1m3!1d3215.366203024067!2d-82.3692879!3d36.3034255!3m2!1i1024!2i768!4f13.1!4m53!3e2!4m5!1s0x885a7cc03e6ac125%3A0xbf01f4b198fb8730!2sRoy%20Nicks%20Hall%2C%20365-441%20Stout%20Dr%2C%20Johnson%20City%2C%20TN%2037604!3m2!1d36.3025449!2d-82.3677649!4m5!1s0x885a7de6b2ad10bb%3A0x12187c8c02ad3d7a!2sRogers-Stout%20Hall%2C%20Stout%20Drive%2C%20Johnson%20City%2C%20TN!3m2!1d36.3032815!2d-82.366176!4m5!1s0x885a7cea93eaf94f%3A0x76ff5cc954ed9527!2sCharles%20C.%20Sherrod%20Library%2C%20J%20L%20Seehorn%20Junior%20Road%2C%20Johnson%20City%2C%20TN!3m2!1d36.302535299999995!2d-82.3657729!4m5!1s0x885a7ceaa5115849%3A0x9744da3bce7bcc94!2sThe%20D.%20P.%20Culp%20Student%20Center%2C%20J%20L%20Seehorn%20Junior%20Road%2C%20Johnson%20City%2C%20TN!3m2!1d36.3013829!2d-82.36669859999999!4m5!1s0x885a7c94ca70f753%3A0x18d09161fc9d5db1!2sETSU%20Basler%20Center%20for%20Physical%20Activity%2C%20Jack%20Vest%20Drive%2C%20Johnson%20City%2C%20TN!3m2!1d36.299892799999995!2d-82.3741747!4m5!1s0x885a7cc0e1b290eb%3A0x9e965440f2ecc7a7!2sETSU%2FBallad%20Health%20Athletic%20Center!3m2!1d36.3038679!2d-82.3708415!4m5!1s0x885a7d29e994f1e7%3A0xb378b92d578d40cd!2sETSU%20Martin%20Center%20for%20the%20Arts!3m2!1d36.3046015!2d-82.37191969999999!4m5!1s0x885a7cc184c5919f%3A0xc797c70c17d38574!2sETSU%20Millennium%20Center!3m2!1d36.3056863!2d-82.37118699999999!4m3!3m2!1d36.302438099999996!2d-82.36800579999999!5e0!3m2!1sen!2sus!4v1675097504108!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <h1 class="display-4">Welcome to Map View</h1>
-                <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
             </div>
         </div>  
 
-        <div id="List" class="tabcontent">
-            <div class="dropdown-example"> <!--One of the dropdown buttons that will contain information on each of the buildings within a tour-->
-                <div class="select-menu">
-                    <div class="select-btn">
-                        <span class="dropdown-title">Roy S. Nicks Hall</span><i class="fas fa-caret-down"></i>
-                        <i class="bx bx-chevron-down"></i>
-                    </div>
-
-                    <ul class="options">
-                        <li class="option">
-                            <span class="option-text">Primarily houses the College of Nursing at ETSU. The building is named after Roy S. Nicks who is an alumni of ETSU and a former Tennessee state senator.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div id="ListTop" class="ListHeader"> <!--Header for the Building list-->
+            <h3>List of Main Buildings</h3>
         </div>
 
-    </body>
+        <div id="ButtonList" class="BuildingList"> <!--List of buttons that correspond to the buildings along the tour-->
+            <ul style="list-style-type:none">
+                <li><button class="BuildingMapButton">1. Roy S. Nicks Hall</button></li>
+                <li><button class="BuildingMapButton">2. Rogers-Stout Hall</button></li>
+                <li><button class="BuildingMapButton">3. Sherrod Library</button></li>
+                <li><button class="BuildingMapButton">4. The D.P. Culp Student Center</button></li>
+                <li><button class="BuildingMapButton">5. ETSU Basler CP</button></li>
+                <li><button class="BuildingMapButton">6. ETSU/Ballad Health Athletic Center</button></li>
+                <li><button class="BuildingMapButton">7. ETSU Martin Center for the Arts</button></li>
+                <li><button class="BuildingMapButton">8. ETSU Millenium Center</button></li>
+            </ul>
+        </div>
+
+    </body> 
 </html>
 
 <style>
-    
-    .center {
-        text-align: center;
-    }
-
-    /* Style tab links */
-    .tablink {
-        background-color: #555;
+    .TopBanner{
+        text-align:center;
+        background-color: #041E42;
         color: #FFC425;
-        float: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        font-size: 17px;
-        width: 20%;
+        margin-top:30px;
+        margin-bottom:30px;
+        padding-top:15px;
+        padding-bottom:15px;
+        width:50%;
+        margin-left:auto;
+        margin-right:auto;
+        border-radius:25px;
     }
 
-    .tablink:hover {
-        background-color: #777;
+    .ListHeader{
+        text-align: center;
+        background-color: #FFC425;
+        color: #041E42;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 25px;
+        border-style:solid;
+        border-color:#041E42;
+        border-width:2px;
     }
-
-    .tabcontent{
-        color:black;
-        display: none;
-        padding:100px 20px;
-        height:100%;
+    .BuildingList{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 200px;
+    }
+    .BuildingMapButton{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius:10px;
     }
 </style>
-
-<script>
-
-    //
-    //This first section of code enables you to switch between the map and list tabs//
-    //
-    function openPage(pageName, elmnt, color) {
-    // Hide all elements with class="tabcontent" by default */
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    }
-
-    // Remove the background color of all tablinks/buttons
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-    }
-
-    // Show the specific tab content
-    document.getElementById(pageName).style.display = "block";
-
-    // Add the specific color to the button used to open the tab content
-    elmnt.style.backgroundColor = color;
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-
-
-
-    //
-    //This section of code enables the dropdown functionality of the list buttons
-    //
-    const optionMenu = document.querySelector(".select-menu"),
-        selectBtn = optionMenu.children[0],
-        options = optionMenu.children[1].children,
-        dropdownTitleText = optionMenu.children[2];
-
-    selectBtn.addEventListener("click", () =>
-        optionMenu.classList.toggle("active")
-    );
-
-    options.forEach((option) => {
-        option.addEventListener("click", () => {
-            let selectedOption = option.querySelector(".option-text").innerText;
-            dropdownTitleText.innerText = selectedOption;
-
-            optionMenu.classList.remove("active");
-        });
-    });
-</script>

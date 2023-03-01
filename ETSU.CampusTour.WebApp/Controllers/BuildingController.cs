@@ -19,6 +19,7 @@ namespace ETSU.CampusTour.WebAPI.Controllers
             _httpClient = httpClient;
         }
 
+
         // GET: Building
         public async Task<IActionResult> Index()
         {
@@ -33,6 +34,7 @@ namespace ETSU.CampusTour.WebAPI.Controllers
             return BadRequest();
         }
 
+
         // GET: Building/Details/5
         public async Task<IActionResult> Details(int id)
         {
@@ -46,6 +48,7 @@ namespace ETSU.CampusTour.WebAPI.Controllers
 
             return NotFound();
         }
+
 
     }
 }
