@@ -10,8 +10,8 @@
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <div class="dropdown-example">
-    <div class="select-menu" id="dropdown1">
-        <div class="select-btn">
+    <div class="dropdown" id="dropdown1">
+        <div class="dropdownSelect">
             <span class="dropdown-title">Roy S. Nicks Hall</span><i class="fas fa-caret-down"></i>
             <i class="bx bx-chevron-down"></i>
         </div>
@@ -27,8 +27,8 @@
     <img src="roysnicks.jpg" />
 </div>
 <div class="dropdown-example">
-    <div class="select-menu" id="dropdown2">
-        <div class="select-btn">
+    <div class="dropdown" id="dropdown2">
+        <div class="dropdownSelect">
             <span class="dropdown-title">DP Culp Center</span><i class="fas fa-caret-down"></i>
             <i class="bx bx-chevron-down"></i>
         </div>
@@ -43,17 +43,4 @@
 <div class="image-holder">
     <img src="cpa.jpg" />
 </div>
-<script>initDropdowns();
-
-    function initDropdowns() {
-        const optionMenu = document.querySelectorAll(".select-menu");
-        optionMenu.forEach(dropdown => {
-            const selectBtn = dropdown.children[0],
-                options = dropdown.children[1].children,
-                dropdownTitleText = dropdown.children[2];
-            selectBtn.addEventListener("click", () =>
-                dropdown.classList.toggle("active")
-            );
-        });
-
-    }</script>
+<script src="js/dropdowns.js"></script>
