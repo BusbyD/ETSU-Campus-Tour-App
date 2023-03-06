@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ETSU.CampusTour.SharedLibrary.Models.Building>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -30,6 +31,8 @@
 
         <div id="ButtonList" class="BuildingList"> <!--List of buttons that correspond to the buildings along the tour-->
             <ul style="list-style-type:none">
+
+                <!--
                 <li><button class="BuildingMapButton">1. Roy S. Nicks Hall</button></li>
                 <li><button class="BuildingMapButton">2. Rogers-Stout Hall</button></li>
                 <li><button class="BuildingMapButton">3. Sherrod Library</button></li>
@@ -38,6 +41,12 @@
                 <li><button class="BuildingMapButton">6. ETSU/Ballad Health Athletic Center</button></li>
                 <li><button class="BuildingMapButton">7. ETSU Martin Center for the Arts</button></li>
                 <li><button class="BuildingMapButton">8. ETSU Millenium Center</button></li>
+                -->
+                
+                @foreach(var building in Model)
+                {
+                    <li><button class="BuildingMapButton">@building.Building_Name</button></li>
+                }
             </ul>
         </div>
 
