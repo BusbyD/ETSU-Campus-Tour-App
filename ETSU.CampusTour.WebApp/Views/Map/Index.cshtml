@@ -14,8 +14,8 @@
             There is also a list of the locations visited along the tour below the map. The list items can be clicked to view them on the map. 
         -->
 
-        <div id="Header" class="TopBanner"> <!--This is the header for the page-->
-            <h1>ETSU Map</h1>
+        <div id="header">
+            <span class="headerText">ETSU - Map</span>
         </div>
 
         <div id="Map" class="tabcontent"> <!--This is where the google maps api thing is embedded into the page-->
@@ -25,7 +25,7 @@
         </div>  
 
         <div id="ListTop" class="ListHeader"> <!--Header for the Building list-->
-            <h3>List of Main Buildings</h3>
+            <h3><span class="ListHeaderText">List of Main Buildings</span></h3>
         </div>
 
         <div id="ButtonList" class="BuildingList"> <!--List of buttons that correspond to the buildings along the tour-->
@@ -43,47 +43,3 @@
 
     </body> 
 </html>
-
-<style>
-    .TopBanner{
-        text-align:center;
-        background-color: #041E42;
-        color: #FFC425;
-        margin-top:30px;
-        margin-bottom:30px;
-        padding-top:15px;
-        padding-bottom:15px;
-        width:50%;
-        margin-left:auto;
-        margin-right:auto;
-        border-radius:25px;
-    }
-
-    .ListHeader{
-        text-align: center;
-        background-color: #FFC425;
-        color: #041E42;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        width: 40%;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 25px;
-        border-style:solid;
-        border-color:#041E42;
-        border-width:2px;
-    }
-    .BuildingList{
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 200px;
-    }
-    .BuildingMapButton{
-        width: 40%;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius:10px;
-    }
-</style>

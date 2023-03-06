@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<ETSU.CampusTour.SharedLibrary.Models.Building>
 
-
 @{
     ViewData["Title"] = "Building";
 }
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+<div id="header">
+    <span class="headerText">ETSU - Main Tour</span>
+</div>
 @foreach (var building in Model)
 {
     <div class="dropdown">
@@ -12,16 +14,14 @@
             <span class="dropdown-title">@building.Building_Name</span><i class="fas fa-caret-down"></i>
             <i class="bx bx-chevron-down"></i>
         </div>
-
         <ul class="options">
             <li class="option">
-                <span class="option-text">@building.Building_Description</span>
+                <span class="optionText">@building.Building_Description</span>
             </li>
         </ul>
     </div>
-
-    <div class="image-holder">
-        <img src="@building.Building_Image">
+    <div class="buildingImgHolder">
+        <img class="buildingImg" src="~/@building.Building_Image">
     </div>
 }
-<script src="js/dropdowns.js"></script>
+<script src="~/js/dropdowns.js"></script>
