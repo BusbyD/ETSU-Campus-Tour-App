@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    body {
+        color: white;
+        background-color: darkgrey;
+        background-position: center;
+        background-image: url("/css/Images/ETSUStudentsWalking.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+@*
+<div style="height:100%;">
+<div class="text-center p-3">
+    <img src="/css/Images/Elogo.png" class="img-fluid rounded-3" />
+    <br />
+    <br />
+    <br />
+    <h1 class="display-1" style="color:white">Tour the Campus!</h1>
+    <br />
+    <div class="rounded-3 img-fluid">
+        <img src="/css/Images/CampusTour.jpg" class="rounded-3"/>
+    </div>
+    </div>
+<br/>
+<br />
+<!--Below has code used to present buttons on landing page and the icons shown on each button. ICONS provided from bootstrap.-->
+    <div class="row">
+        <div class="column"></div>
+        <div class="column d-grid col mx-auto gap-1">
+            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Index">
+                Main Tour
+            </a>
+            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Task">
+                Department Tour
+            </a>
+            <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="User">
+                Other
+            </a>
+        </div>
+        <div class="column"></div>
+    </div>
+<div class="d-grid col mx-auto gap-1">
+    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Index">
+    Main Tour
+    </a>
+    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="Task">
+    Department Tour
+    </a>
+    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Home" asp-action="User">
+    Other
+    </a>
+</div>
+</div>*@
+    <div class="container-fluid text-center">
+    <br />
+    <br />
+    <img src="/css/Images/Elogo.png" class="img-fluid rounded-3" />
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+            <div class="col-sm-8 text-left">
+            <p id="example5">Tour the Campus!</p>
+                <hr>
+                <div class="d-grid col mx-auto gap-1">
+                    <a class="btn btn-primary rounded-0 p-1" asp-area="" asp-controller="Building" asp-action="Index">
+                        Main Tour
+                    </a>
+                    <a class="btn btn-primary rounded-0 p-1 disabled" asp-area="" asp-controller="Home" asp-action="Task">
+                        Department Tour
+                    </a>
+                    <a class="btn btn-primary rounded-0 p-1 disabled disabled" asp-area="" asp-controller="Home" asp-action="User">
+                        Other
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+            </div>
+        </div>
+    </div>
+    </div>
