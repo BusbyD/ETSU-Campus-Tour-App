@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETSUGuidedTourApp.Documenta
 		000_ETSUCampusTour_README.txt = 000_ETSUCampusTour_README.txt
 		ETSU.CampusTour.Documentation\001_ETSUCampusTour_TablesCreation.sql = ETSU.CampusTour.Documentation\001_ETSUCampusTour_TablesCreation.sql
 		ETSU.CampusTour.Documentation\002_ETSUCampusTour_TablesInsert.sql = ETSU.CampusTour.Documentation\002_ETSUCampusTour_TablesInsert.sql
+		ETSU.CampusTour.Documentation\003_ETSUCampusTour_Sprint2 Change.sql = ETSU.CampusTour.Documentation\003_ETSUCampusTour_Sprint2 Change.sql
 	EndProjectSection
 EndProject
 Global
