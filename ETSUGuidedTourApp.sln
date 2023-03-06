@@ -8,9 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ETSUGuidedTourApp.Web", "ETSU.CampusTour.WebApp\ETSUGuidedTourApp.Web.csproj", "{1DA9E8FC-5A19-4320-BFD4-E4B88E488439}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B4388E7A-283D-4052-BE68-2CF55E484B80}"
-	ProjectSection(SolutionItems) = preProject
-		ETSU.CampusTour.WebApi\appsettings.Development.json = ETSU.CampusTour.WebApi\appsettings.Development.json
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C14FDCEE-6B1E-4C93-B137-BB6013BE28E8}"
 EndProject
