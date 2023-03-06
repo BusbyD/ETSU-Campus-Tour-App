@@ -101,6 +101,10 @@ div.card.text-center {
     border-color: #285e8e; /*set the color you want here*/
 }
 
+.footer, .footer.active, .footer:active, .footer:focus, footer.focus {
+    background-color: #041E42;
+}
+
 #example5{
 	color: white;
 	font-size: 40px;
