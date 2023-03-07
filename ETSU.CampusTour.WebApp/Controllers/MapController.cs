@@ -2,7 +2,7 @@
 
 namespace ETSUGuidedTourApp.Web.Controllers
 {
-    public class TourMapController : Controller
+    public class MapController : Controller
     {
         public IActionResult Index()
         {

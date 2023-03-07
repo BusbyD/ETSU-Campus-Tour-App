@@ -1,8 +1,30 @@
-﻿@{
+﻿@model IEnumerable<ETSU.CampusTour.SharedLibrary.Models.Tour>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>List of Tours</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tour Id</th>
+            <th>Tour Name</th>
+            <th>Tour Description</th>
+            <th>Tour Type</th>
+            <th>Tour Route</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tour in Model)
+        {
+            <tr>
+                <td>@tour.Tour_Id</td>
+                <td>@tour.Tour_Name</td>
+                <td>@tour.Tour_Description</td>
+                <td>@tour.Tour_Type</td>
+                <td>@tour.Tour_Route</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -11,9 +11,9 @@ namespace ETSU.CampusTour.SharedLibrary.Models
     {
         [Key]
         public int Building_Id { get; set; }
-        public string Building_Name { get; set; }
-        public string Building_Description { get; set; }
-        public string Building_Image { get; set; }
+        public string Building_Name { get; set; } = string.Empty;
+        public string Building_Description { get; set; } = string.Empty;
+        public string Building_Image { get; set; } = string.Empty;
         public int College_Id { get; set; }
         public int Department_Id { get; set; }
     }

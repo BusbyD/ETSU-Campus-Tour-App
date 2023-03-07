@@ -43,7 +43,7 @@ namespace ETSU.CampusTour.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != user.user_id)
+            if (id != user.User_id)
             {
                 return BadRequest();
             }
@@ -70,16 +70,26 @@ namespace ETSU.CampusTour.API.Controllers
         }
 
         // POST: api/Users
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        // this method prevents over posting attacks with the TryUpdateModelAsync method
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            string propertiesToBind = "UserName,Email";
+            bool isModelUpdated = await TryUpdateModelAsync(user, propertiesToBind);
 
-            return CreatedAtAction("GetUser", new { id = user.user_id }, user);
+            if (isModelUpdated)
+            {
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetUser", new { id = user.User_id }, user);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
+
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
@@ -99,7 +109,7 @@ namespace ETSU.CampusTour.API.Controllers
 
         private bool UserExists(int id)
         {
-            return _context.Users.Any(e => e.user_id == id);
+            return _context.Users.Any(e => e.User_id == id);
         }
     }
 }
