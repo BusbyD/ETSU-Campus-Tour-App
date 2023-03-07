@@ -16,8 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETSUGuidedTourApp.Documentation", "ETSUGuidedTourApp.Documentation", "{ED050A18-485B-44B9-B504-DE46FD321163}"
 	ProjectSection(SolutionItems) = preProject
 		000_ETSUCampusTour_README.txt = 000_ETSUCampusTour_README.txt
-		ETSU.CampusTour.Documentation\001_ETSUCampusTour_TablesCreation.sql = ETSU.CampusTour.Documentation\001_ETSUCampusTour_TablesCreation.sql
-		ETSU.CampusTour.Documentation\002_ETSUCampusTour_TablesInsert.sql = ETSU.CampusTour.Documentation\002_ETSUCampusTour_TablesInsert.sql
+		..\..\..\Documents\SQL Server Management Studio\001_ETSUCampusTour_TablesCreation.sql = ..\..\..\Documents\SQL Server Management Studio\001_ETSUCampusTour_TablesCreation.sql
+		..\..\..\Documents\SQL Server Management Studio\002_ETSUCampusTour_TablesInsert.sql = ..\..\..\Documents\SQL Server Management Studio\002_ETSUCampusTour_TablesInsert.sql
 		ETSU.CampusTour.Documentation\003_ETSUCampusTour_Sprint2 Change.sql = ETSU.CampusTour.Documentation\003_ETSUCampusTour_Sprint2 Change.sql
 	EndProjectSection
 EndProject
