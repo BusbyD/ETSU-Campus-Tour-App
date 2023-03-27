@@ -77,7 +77,7 @@ p {
 }
 
 /*<!--#FFC425 off #083470 etsublue #041E42-->*/
-div.card-header {
+/*div.card-header {
     background-color: #083470;
 }
 
@@ -87,7 +87,7 @@ div.card-body {
 
 div.card.text-center {
     background-color: white;
-}
+}*/
 
 .btn-primary {
     color: white;

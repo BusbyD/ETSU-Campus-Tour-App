@@ -15,4 +15,16 @@ function initDropdowns() {
 }
 
 
+const checkboxes = document.querySelectorAll('.checkbox');
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+        console.log('Checkbox clicked');
+        // Add your code here to handle checkbox click event
+    });
+});
+
+
+
+
 initDropdowns();
