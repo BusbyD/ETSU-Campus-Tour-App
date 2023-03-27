@@ -3,20 +3,45 @@
 @{
     ViewData["Title"] = "Building";
 }
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+<style>
+    .card {
+        transition: opacity 0.5s ease;
+    }
+    .card:hover {
+        opacity: 0.8;
+    }
+    .checkbox {
+        cursor: pointer;
+    }
+</style>
+
 <script>
     $(document).ready(function () {
         $(".description-toggle").click(function () {
             var buildingId = $(this).attr("id").split("-")[1];
             $("#description-" + buildingId).toggle();
         });
+
+        $('.checkbox').click(function () {
+            var card = $(this).closest('.card');
+            var checkbox = $(this).find('input[type="checkbox"]');
+            var isChecked = checkbox.prop('checked');
+            card.css('opacity', isChecked ? 0.5 : 1);
+        });
     });
 </script>
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <div class="sticky-top" id="header">
     <span class="headerText">ETSU - Main Tour</span>
 </div>
+
 <h6 class="text-center">Est. time to complete: 2 hours</h6>
+
 @foreach (var building in Model)
 {
     <div class="container">
@@ -28,17 +53,25 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <h5 class="card-title">@building.Building_Name</h5>
+                                <h5 class="card-title">
+                                @building.Building_Name
+                                </h5>
                             </div>
                             <div class="col align-content-lg-end">
-                                <span class="checkbox" style="float:right;">
+                                <span class="dropdown" style="float:right;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-down" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
                                     </svg>
                                 </span>
                             </div>
                         </div>
-                        <p class="card-text building-description" style="display:none;">@building.Building_Description</p>
+                        <p class="card-text building-description" style="display:none;" id="description-@building.Building_Id">
+                            @building.Building_Description
+                            <span class="checkbox" style="float:right;">
+                                <input type="checkbox" />
+                            </span>
+                        </p>
+
                     </div>
                     <div class="card-footer">
                         <audio style="position: relative; text-align:center;" controls="" controlslist="nodownload" src="https://www.etsu.edu/admissions/get-connected/documents/walking_tour_audio/2_wayne_g_basler_center_for_physical_fitness.m4a" data-mce-fragment="1">Charles C. Sherrod Library</audio>
@@ -55,7 +88,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('.checkbox').click(function () {
+        $('.dropdown').click(function () {
             $(this).closest('.card').find('.building-description').toggle();
         });
     });
