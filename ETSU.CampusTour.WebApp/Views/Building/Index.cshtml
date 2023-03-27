@@ -3,6 +3,15 @@
 @{
     ViewData["Title"] = "Building";
 }
+<script>
+    $(document).ready(function () {
+        $(".description-toggle").click(function () {
+            var buildingId = $(this).attr("id").split("-")[1];
+            $("#description-" + buildingId).toggle();
+        });
+    });
+</script>
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <div class="sticky-top" id="header">
     <span class="headerText">ETSU - Main Tour</span>
@@ -10,28 +19,26 @@
 <h6 class="text-center">Est. time to complete: 2 hours</h6>
 @foreach (var building in Model)
 {
-
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-            </div>
+            <div class="col-sm"></div>
             <div class="col-sm">
                 <div class="card">
                     <img class="card-img-top" src="~/@building.Building_Image" alt="Card image cap">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <h5 class="card-title">
-                                    @building.Building_Name
-                                </h5>
+                                <h5 class="card-title">@building.Building_Name</h5>
                             </div>
                             <div class="col align-content-lg-end">
                                 <span class="checkbox" style="float:right;">
-                                    <i class="fa fa-check-square align-content-end" style="color:#041E42; font-size:18px;"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
                                 </span>
                             </div>
                         </div>
-                        <p class="card-text">@building.Building_Description</p>
+                        <p class="card-text building-description" style="display:none;">@building.Building_Description</p>
                     </div>
                     <div class="card-footer">
                         <audio style="position: relative; text-align:center;" controls="" controlslist="nodownload" src="https://www.etsu.edu/admissions/get-connected/documents/walking_tour_audio/2_wayne_g_basler_center_for_physical_fitness.m4a" data-mce-fragment="1">Charles C. Sherrod Library</audio>
@@ -39,32 +46,21 @@
                 </div>
                 <br />
                 <br />
-
-                @*<div class="card">
-                    <div class="card-body">
-                        <div class="dropdown">
-                            <div class="dropdownSelect">
-                                <span class="dropdown-title">@building.Building_Name</span><i class="fas fa-caret-down"></i>
-                                <i class="bx bx-chevron-down"></i>
-                            </div>
-                            <ul class="options">
-                                <li class="option">
-                                    <span class="optionText">@building.Building_Description</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="buildingImgHolder">
-                            <img class="buildingImg" src="~/@building.Building_Image">
-                        </div>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>*@
             </div>
-            <div class="col-sm">
-            </div>
+            <div class="col-sm"></div>
         </div>
     </div>
 }
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.checkbox').click(function () {
+            $(this).closest('.card').find('.building-description').toggle();
+        });
+    });
+</script>
+
 
 <script src="~/js/dropdowns.js"></script>
 <footer class="footer mt-auto">
