@@ -3,28 +3,135 @@
 @{
     ViewData["Title"] = "Building";
 }
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+<style>
+    .card {
+        transition: opacity 0.5s ease;
+    }
+    .card:hover {
+        opacity: 0.8;
+    }
+    .checkbox {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $(".description-toggle").click(function () {
+            var buildingId = $(this).attr("id").split("-")[1];
+            $("#description-" + buildingId).toggle();
+        });
+
+        $('.checkbox').click(function () {
+            var card = $(this).closest('.card');
+            var checkbox = $(this).find('input[type="checkbox"]');
+            var isChecked = checkbox.prop('checked');
+            card.css('opacity', isChecked ? 0.5 : 1);
+        });
+    });
+</script>
+
+<div class="modal" id="infoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Welcome to the Main Tour!</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The starting point of the main tour is located at <strong>Roy Nicks Hall</strong>.</p>
+                <p>
+                    To view the tour route on a map, click the map
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="37" fill="#FFC425" class="bi bi-geo-alt" viewBox="0 0 25 25">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>icon in the bottom menu. You can switch between the map and list pages at any time during the tour.
+                </p>
+                <p>
+                    To see more information about the buildings at each stop of the tour, select the dropdown icon to the right of the building name.
+                </p>
+                <p>
+                    Once you have completed a stop on the tour, make sure to click the checkbox within the dropdown to indicate that you have been to that building.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" style="background-color:#041E42;" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="sticky-top" id="header">
     <span class="headerText">ETSU - Main Tour</span>
 </div>
+
 <h6 class="text-center">Est. time to complete: 2 hours</h6>
+
 @foreach (var building in Model)
 {
-    <div class="dropdown">
-        <div class="dropdownSelect">
-            <span class="dropdown-title">@building.Building_Name</span><i class="fas fa-caret-down"></i>
-            <i class="bx bx-chevron-down"></i>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img-top" src="~/@building.Building_Image" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">
+                                @building.Building_Name
+                                </h5>
+                            </div>
+                            <div class="col align-content-lg-end">
+                                <span class="dropdown" style="float:right;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="card-text building-description" style="display:none;" id="description-@building.Building_Id">
+                            @building.Building_Description
+                            <span class="checkbox" style="float:right;">
+                                <input type="checkbox" />
+                            </span>
+                        </p>
+
+                    </div>
+                    <div class="card-footer">
+                        <audio style="position: relative; text-align:center;" controls="" controlslist="nodownload" src="https://www.etsu.edu/admissions/get-connected/documents/walking_tour_audio/2_wayne_g_basler_center_for_physical_fitness.m4a" data-mce-fragment="1">Charles C. Sherrod Library</audio>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            <div class="col-sm"></div>
         </div>
-        <ul class="options">
-            <li class="option">
-                <span class="optionText">@building.Building_Description</span>
-            </li>
-        </ul>
-    </div>
-    <div class="buildingImgHolder">
-        <img class="buildingImg" src="~/@building.Building_Image">
     </div>
 }
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.dropdown').click(function () {
+            $(this).closest('.card').find('.building-description').toggle();
+        });
+    });
+
+    // Initializes the modal when the page loads
+    $(window).on('load', function () {
+        $('#infoModal').modal('show');
+    });
+</script>
+
+
 <script src="~/js/dropdowns.js"></script>
 <footer class="footer mt-auto">
     <div class="container text-center">
